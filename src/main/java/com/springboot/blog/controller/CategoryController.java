@@ -1,6 +1,5 @@
 package com.springboot.blog.controller;
 
-import com.springboot.blog.entity.Category;
 import com.springboot.blog.payload.CategoryDto;
 import com.springboot.blog.service.CategoryService;
 import org.springframework.http.HttpStatus;
@@ -14,9 +13,9 @@ import java.util.List;
 @RequestMapping("/api/v1/categories")
 public class CategoryController {
 
-    private CategoryService categoryService;
+    private final CategoryService categoryService;
 
-    public CategoryController(CategoryService categoryService) {
+    private CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
 

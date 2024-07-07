@@ -2,6 +2,7 @@ package com.springboot.blog.controller;
 
 import com.springboot.blog.payload.CommentDto;
 import com.springboot.blog.service.CommentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,9 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class CommentController {
 
-    private CommentService commentService;
+    private final CommentService commentService;
 
-    public CommentController(CommentService commentService) {
+    private CommentController(CommentService commentService) {
         this.commentService = commentService;
     }
 
